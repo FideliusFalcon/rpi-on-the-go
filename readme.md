@@ -71,7 +71,7 @@ $iwconfig
 To intergate with the Raspberry Pi over USB you need a driver.  
 Install RNDIS gadget driver at: https://www.driverscape.com/download/usb-ethernet-rndis-gadget
 
-When you have installed the driver, plugged in your Raspberry Pi, you should see a connection under controlepanel/networkconnections named RNDIS. Right click on it and go to properties. Click on 'TCP/IPv4...' and properties. Input your IP configuration:  
+When you have installed the driver, plugged in your Raspberry Pi, you should see a connection under controlepanel/networkconnections named RNDIS/Ethernet Gadget. Right click on it and go to properties. Click on 'TCP/IPv4...' and properties. Input your IP configuration:  
     Ip address: 10.0.12.1  
     Subnet mask: 255.255.255.0  
     Default gateway: 10.0.12.1  
