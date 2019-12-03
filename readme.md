@@ -15,7 +15,7 @@ Create a new interface configuration
 ```
 $sudo nano /etc/network/interfaces.d/usb0.conf
 ```
-Insert conf:
+Insert this configuration:
 ```
 allow-hotplug usb0
 iface usb0 inet static
@@ -29,7 +29,7 @@ iface usb0 inet static
 ```
 $sudo nano /etc/resolv.conf
 ```
-Insert:
+Insert to the end:
 ```
 nameserver 10.0.12.1
 ```
@@ -47,7 +47,28 @@ modules-load=dwc2,g_ether
 ```
 $sudo nano /boot/config.txt
 ```
-Add this to the end
+Add this to the end:
 ```
 dtoverlay=dwc2
 ```
+
+Reboot the Raspberry Pi. 
+```
+$sudo reboot now
+```
+If you list all the interfaces you should now see usb0
+```
+$iwconfig
+```
+
+## Windows Host Setup
+To intergate with the Raspberry Pi over USB you need a driver.  
+Install RNDIS gadget driver at: https://www.driverscape.com/download/usb-ethernet-rndis-gadget
+
+When you have installed the driver, plugged in your Raspberry Pi, you should see a connection under controlepanel/networkconnections named RNDIS. Right click on it and go to properties. Click on 'TCP/IPv4...' and properties. Input your IP configuration:  
+Ip adress: 10.0.12.1  
+Subnet mask: 255.255.255.0  
+Default gateway: 10.0.12.1  
+
+You can use Google's DNS server:  
+8.8.8.8
