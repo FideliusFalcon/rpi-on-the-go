@@ -25,7 +25,7 @@ iface usb0 inet static
     gateway 10.0.12.1
     dns-nameservers 10.0.12.1
 ```
-***If you wan't you can change this configuration. 'Address' is the Raspberry Pi's IP on this interface. 'Gateway' is your computers, you change this but remember to input this when you setup your PC later. 'Dns-nameservers' is also your PC. ***  
+*If you wan't you can change this configuration. 'Address' is the Raspberry Pi's IP on this interface. 'Gateway' is your computers, you change this but remember to input this when you setup your PC later. 'Dns-nameservers' is also your PC. *  
 
 **Edit your DNS resolver file:**
 `
