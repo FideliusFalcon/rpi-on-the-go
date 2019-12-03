@@ -2,7 +2,7 @@
 The new Raspberry Pi 4 has data transfer in the power USB-C and with OTG. You can use this to variant of thinks, but one I find cool, is to make a ethernet connection between your PC and the Raspberry Pi. This gives us a easy connection to our Pi's in the field.
 
 ## Setup on the Raspberry Pi
-Edit the interface configuration file:
+**Edit the interface configuration file:**
 ```
 $sudo nano /etc/network/interfaces
 ```
@@ -15,7 +15,7 @@ Create a new interface configuration
 ```
 $sudo nano /etc/network/interfaces.d/usb0.conf
 ```
-
+Insert conf:
 ```
 allow-hotplug usb0
 iface usb0 inet static
@@ -23,4 +23,31 @@ iface usb0 inet static
     gateway 10.0.12.1
     dns-nameservers 10.0.12.1
 ```
-If you wan't you can change the configuration. 'Address' is the Raspberry Pi's IP on this interface. 'Gateway' is your computers, you change this but remember to input this when you setup your PC later. 'Dns-nameservers' is also your PC.   
+***If you wan't you can change this configuration. 'Address' is the Raspberry Pi's IP on this interface. 'Gateway' is your computers, you change this but remember to input this when you setup your PC later. 'Dns-nameservers' is also your PC. ***  
+
+**Edit your DNS resolver file:**
+```
+$sudo nano /etc/resolv.conf
+```
+Insert:
+```
+nameserver 10.0.12.1
+```
+
+**Edit the Kernel Command Line**
+```
+$sudo nano /boot/cmdline.txt
+```
+Add following after 'rootwait'
+```
+modules-load=dwc2,g_ether
+```
+
+**Edit the Raspberry Pi's configuration file**
+```
+$sudo nano /boot/config.txt
+```
+Add this to the end
+```
+dtoverlay=dwc2
+```
