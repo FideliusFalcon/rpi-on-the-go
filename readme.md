@@ -3,9 +3,9 @@ The new Raspberry Pi 4 has data transfer in the power USB-C and with OTG. You ca
 
 ## Setup on the Raspberry Pi
 **Edit the interface configuration file:**
-```
+`
 $sudo nano /etc/network/interfaces
-```
+`
 Change to:
 ```
 source /etc/network/interfaces.d/*
@@ -66,9 +66,9 @@ To intergate with the Raspberry Pi over USB you need a driver.
 Install RNDIS gadget driver at: https://www.driverscape.com/download/usb-ethernet-rndis-gadget
 
 When you have installed the driver, plugged in your Raspberry Pi, you should see a connection under controlepanel/networkconnections named RNDIS. Right click on it and go to properties. Click on 'TCP/IPv4...' and properties. Input your IP configuration:  
-Ip adress: 10.0.12.1  
-Subnet mask: 255.255.255.0  
-Default gateway: 10.0.12.1  
+    Ip address: 10.0.12.1  
+    Subnet mask: 255.255.255.0  
+    Default gateway: 10.0.12.1  
 
 You can use Google's DNS server:  
 8.8.8.8
