@@ -17,10 +17,8 @@ Insert this configuration:
 allow-hotplug usb0
 iface usb0 inet static
     address 10.0.5.2/24
-    gateway 10.0.5.1
-    dns-nameservers 10.0.5.1
 ```
-*If you wan't you can change this configuration. 'Address' is the Raspberry Pi's IP on this interface. 'Gateway' is your computers, you change this but remember to input this when you setup your PC later. 'Dns-nameservers' is also your PC. *  
+*address is the IP address that the Raspberry Pi will get*  
 
 
 **Edit the Kernel Command Line**
@@ -60,7 +58,6 @@ When you have installed the driver, plugged in your Raspberry Pi, you should see
 ```
     Ip address: 10.0.5.1  
     Subnet mask: 255.255.255.0  
-    Default gateway: 10.0.5.1  
 ```
 
 You can use CloudFlare's DNS server:  
